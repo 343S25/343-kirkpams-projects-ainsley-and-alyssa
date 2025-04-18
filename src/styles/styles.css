@@ -4,6 +4,10 @@ html, body {
     height: 100%;
 }
 
+.btn {
+    color: white;
+}
+
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -30,6 +34,7 @@ button, .btn {
     padding: 0.5rem 1.25rem;
     text-align: left;
     font-family: 'Times New Roman', Times, serif;
+    /* background-color :#AB644B; */
 }
 
 .main-nav .nav-list {
