@@ -118,7 +118,7 @@ async function handleFiles(files) {
 function previewImage(preview, file) {
   const figure = document.createElement("figure");
   const img = document.createElement("img");
-  img.setAttribute('alt', 'uploaded file');
+  img.setAttribute('alt', `preview of ${file.name}`);
   // img.classList.add("obj");
   img.file = file;
   const caption = document.createElement("figcaption");
