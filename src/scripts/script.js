@@ -265,4 +265,24 @@ function populateFavoritesHTML() {
 
 // Create an object out of add form submission
 
+//IN PROGRESS
+const wearButton = getElementById('wear-btn');
+wearButton.addEventListener('click', function() {
+    //get item from local storage
+    const wornItems = localStorage.getItem('worn');
+    //if theres no item create one
+    if (wornItems == null) {
+        wornItems = [];
+    } else {
+        wornItems = JSON.parse(cardArr);
+    }
 
+    //TODO: get item and add item currently on display to array
+    const article = {
+
+    };
+
+    //put in local storage
+    wornItems.push(article);
+    localStorage.setItem('worn', JSON.strigift(wornItems));
+})
