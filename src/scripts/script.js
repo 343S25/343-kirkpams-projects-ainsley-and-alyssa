@@ -10,6 +10,7 @@ let defaultHead = {
 }
 
 let defaultTop = {
+    itemName: "Default Top",
     category: "Shirts",
     subcategory: "T-shirts",
     color: "White",
@@ -21,6 +22,7 @@ let defaultTop = {
 
 // Create default bottoms
 let defaultBottoms = {
+    itemName: "Default Bottoms",
     category: "Pants",
     subcategory: "Khakis",
     color: "Beige",
@@ -32,6 +34,7 @@ let defaultBottoms = {
 
 // Create default shoes
 let defaultShoes = {
+    itemName: "Default Shoes",
     category: "Shoes",
     subcategory: "Sneakers",
     color: "Black",
@@ -50,16 +53,15 @@ tops.push(defaultTop);
 bottoms.push(defaultBottoms);
 shoes.push(defaultShoes);
 
-// Add items to carousel
+// Make item carousel slides
 let topsCarousel = document.getElementById("carousel-inner-1");
 let bottomsCarousel = document.getElementById("carousel-inner-2");
 let shoesCarousel = document.getElementById("carousel-inner-3");
 
-// Make item carousel slides
-tops.forEach((item, index) => {
+function addTopSlide(item) {
     let itemSlide = document.createElement("div");
     itemSlide.classList.add("carousel-item");
-    if (index === 0) itemSlide.classList.add("active");
+    if (item.itemName = "Default Top") itemSlide.classList.add("active");
     let itemImg = document.createElement("img");
     itemImg.classList.add("d-block", "w-100");
     itemImg.height = "100";
@@ -68,12 +70,12 @@ tops.forEach((item, index) => {
     itemImg.alt = item.altText;
     itemSlide.appendChild(itemImg);
     topsCarousel.appendChild(itemSlide);
-});
+}
 
-bottoms.forEach((item, index) => {
+function addBottomsSlide(item) {
     let itemSlide = document.createElement("div");
     itemSlide.classList.add("carousel-item");
-    if (index === 0) itemSlide.classList.add("active");
+    if (item.itemName = "Default Bottoms") itemSlide.classList.add("active");
     let itemImg = document.createElement("img");
     itemImg.classList.add("d-block", "w-100");
     itemImg.height = "100";
@@ -82,12 +84,12 @@ bottoms.forEach((item, index) => {
     itemImg.alt = item.altText;
     itemSlide.appendChild(itemImg);
     bottomsCarousel.appendChild(itemSlide);
-});
+}
 
-shoes.forEach((item, index) => {
+function addShoesSlide(item) {
     let itemSlide = document.createElement("div");
     itemSlide.classList.add("carousel-item");
-    if (index === 0) itemSlide.classList.add("active");
+    if (item.itemName = "Default Shoes") itemSlide.classList.add("active");
     let itemImg = document.createElement("img");
     itemImg.classList.add("d-block", "w-100");
     itemImg.height = "100";
@@ -96,8 +98,12 @@ shoes.forEach((item, index) => {
     itemImg.alt = item.altText;
     itemSlide.appendChild(itemImg);
     shoesCarousel.appendChild(itemSlide);
-});
+}
 
+// Make default item carousel slides
+addTopSlide(defaultTop);
+addBottomsSlide(defaultBottoms);
+addShoesSlide(defaultShoes);
 
 // Make currently worn object
 let currentlyWorn = {
@@ -147,6 +153,7 @@ function updateCurrentOutfitFromCarousel() {
     // Top
     let activeTop = document.querySelector('#carousel-inner-1 .carousel-item.active img');
     currentlyWorn.top = {
+        itemName : activeTop.itemName,
         category: activeTop.category,
         subcategory: activeTop.subcategory,
         color: activeTop.color,
@@ -161,6 +168,7 @@ function updateCurrentOutfitFromCarousel() {
     // Bottoms
     let activeBottom = document.querySelector('#carousel-inner-2 .carousel-item.active img');
     currentlyWorn.bottoms = {
+        itemName : activeBottom.itemName,
         category: activeBottom.category,
         subcategory: activeBottom.subcategory,
         color: activeBottom.color,
@@ -175,6 +183,7 @@ function updateCurrentOutfitFromCarousel() {
     // Shoes
     let activeShoes = document.querySelector('#carousel-inner-3 .carousel-item.active img');
     currentlyWorn.shoes = {
+        itemName: activeShoes.itemName,
         category: activeShoes.category,
         subcategory: activeShoes.subcategory,
         color: activeShoes.color,
@@ -226,7 +235,7 @@ favsButton.addEventListener('click', function() {
 });
 
 // Save button functionality (TODO MORE, RN JUST ADDS OBJECT TO AN ARRAY. IN FAVORITES.HTML WE SHOULD MAKE IT SO IT LOOPS THRU THE ARRAY
-let favOutfits = []
+let favOutfits = JSON.parse(localStorage.getItem("favOutfits") || "[]");
 
 const saveButton = document.getElementById("saveOutfitBtn");
 saveButton.addEventListener('click', function() {
@@ -263,7 +272,7 @@ function populateFavoritesHTML() {
     });
 }
 
-// Create an object out of add form submission
+
 
 //IN PROGRESS
 const wearButton = getElementById('wear-btn');
