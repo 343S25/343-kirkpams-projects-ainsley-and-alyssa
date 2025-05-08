@@ -146,6 +146,23 @@ button, .btn {
     position: relative;
 }
 
+.favparent {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0;
+}
+
+.favdiv {
+    grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    background-color: #647687
+}
+
 .lower-button {
     background-color: #72383D;
     color: #F1F3F4;

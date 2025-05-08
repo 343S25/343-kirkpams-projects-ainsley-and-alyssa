@@ -48,7 +48,9 @@ let tops = [];
 let bottoms = [];
 let shoes = [];
 let closet = [];
-
+localStorage.setItem("tops", JSON.stringify(tops));
+localStorage.setItem("bottoms", JSON.stringify(bottoms));
+localStorage.setItem("shoes", JSON.stringify(shoes));
 tops.push(defaultTop);
 bottoms.push(defaultBottoms);
 shoes.push(defaultShoes);
@@ -275,23 +277,56 @@ function populateFavoritesHTML() {
 
 
 //IN PROGRESS
-const wearButton = getElementById('wear-btn');
+const wearButton = document.getElementById('wear-btn');
 wearButton.addEventListener('click', function() {
     //get item from local storage
-    const wornItems = localStorage.getItem('worn');
+    let wornItems = localStorage.getItem('worn');
     //if theres no item create one
     if (wornItems == null) {
         wornItems = [];
     } else {
-        wornItems = JSON.parse(cardArr);
+        wornItems = JSON.parse(wornItems);
     }
 
     //TODO: get item and add item currently on display to array
-    const article = {
-
+    let article = {
+        top: {
+            itemName: currentlyWorn.top.itemName,
+            category: currentlyWorn.top.category,
+            subcategory: currentlyWorn.top.subcategory,
+            color: currentlyWorn.top.color,
+            size: currentlyWorn.top.size,
+            image: currentlyWorn.top.image,
+            altText: currentlyWorn.top.altText,
+            wears: currentlyWorn.top.wears + 1
+        },
+        bottoms: {
+            itemName: currentlyWorn.bottoms.itemName,
+            category: currentlyWorn.bottoms.category,
+            subcategory: currentlyWorn.bottoms.subcategory,
+            color: currentlyWorn.bottoms.color,
+            size: currentlyWorn.bottoms.size,
+            image: currentlyWorn.bottoms.image,
+            altText: currentlyWorn.bottoms.altText,
+            wears: currentlyWorn.bottoms.wears + 1
+        },
+        shoes: {
+            itemName: currentlyWorn.shoes.itemName,
+            category: currentlyWorn.shoes.category,
+            subcategory: currentlyWorn.shoes.subcategory,
+            color: currentlyWorn.shoes.color,
+            size: currentlyWorn.shoes.size,
+            image: currentlyWorn.shoes.image,
+            altText: currentlyWorn.shoes.altText,
+            wears: currentlyWorn.shoes.wears + 1
+        }
     };
+
+    currentlyWorn.top.wears++;
+    currentlyWorn.bottoms.wears++;
+    currentlyWorn.shoes.wears++;
 
     //put in local storage
     wornItems.push(article);
-    localStorage.setItem('worn', JSON.strigift(wornItems));
+    localStorage.setItem('worn', JSON.stringify(wornItems));
 })

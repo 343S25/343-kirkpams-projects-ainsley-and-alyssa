@@ -1,3 +1,12 @@
 div {
     font-family:'Times New Roman', Times, serif;
 }
+
+.list-group-item {
+    color: red;
+}
+
+.list-group {
+    color: red;
+    /* WHY ISNT THIS WORKING */
+}

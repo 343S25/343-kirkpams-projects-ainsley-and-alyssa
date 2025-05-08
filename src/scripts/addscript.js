@@ -1,3 +1,8 @@
+// get stuff from localstorage from script.js
+let tops = JSON.parse(localStorage.getItem("tops")) || [];
+let bottoms = JSON.parse(localStorage.getItem("bottoms")) || [];
+let shoes = JSON.parse(localStorage.getItem("shoes")) || [];
+
 // Create an object out of add form submission
 let clothesForm = document.getElementById("add-form");
 let imageForm = document.getElementById("dropbox");
@@ -31,13 +36,13 @@ clothesForm.addEventListener('submit', function(e) {
         wears: 0
     }
 
-    if (itemCategory == "Tops") {
+    if (itemCategory === "Tops") {
         tops.push(clothingItem);
         console.log(tops);
-    } else if (itemCategory == "Bottoms") {
+    } else if (itemCategory === "Bottoms") {
         bottoms.push(clothingItem);
         console.log(bottoms);
-    } else if (itemCategory == "Shoes") {
+    } else if (itemCategory === "Shoes") {
         shoes.push(clothingItem);
         console.log(shoes);
     }
