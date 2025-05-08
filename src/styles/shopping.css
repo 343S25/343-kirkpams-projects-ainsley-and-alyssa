@@ -2,11 +2,53 @@ div {
     font-family:'Times New Roman', Times, serif;
 }
 
-.list-group-item {
-    color: red;
+body {
+    background-color: #72383D;
 }
 
-.list-group {
-    color: red;
-    /* WHY ISNT THIS WORKING */
+#shopNowDiv a, #popularDiv a, #luxuryDiv a {
+    color: black;
 }
+
+#shopNowDiv a:hover, #popularDiv a:hover, #luxuryDiv a:hover {
+    color: #72383D;
+}
+
+h2 {
+    background-color: #72383D;
+    border: 3px solid #AB644B;
+    border-radius: 15px;
+    color: white;
+    padding: 1em;
+    margin: 5px;
+}
+
+.list-group-item2 {
+    background-color: #9CABB4;
+    padding: 5px;
+}
+
+.list-group-item3 {
+    background-color: #647687;
+    padding: 5px;
+}
+
+.list-group-item1 {
+    background-color: #D2DCE6;
+    padding: 5px;
+}
+
+#shopping-page {
+    background-color: #AB644B;
+}
+
+@media (min-width: 700px) 
+{
+
+    #shoppingParentDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
