@@ -57,13 +57,6 @@ button, .btn {
 }
 
 .navdiv {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    grid-row: span 1;
-    grid-column: span 2;
-    background-color: #AB644B;
-    padding: 15px; */
     grid-column: span 5 / span 5;
     background-color: #AB644B;
 }

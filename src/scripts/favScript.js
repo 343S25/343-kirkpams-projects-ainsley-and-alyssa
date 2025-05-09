@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     // Make item carousel slides
     let outfitsCarousel = document.getElementById("carousel-inner-fav");
+    
 
 
     favOutfits.forEach((outfit, index) => {

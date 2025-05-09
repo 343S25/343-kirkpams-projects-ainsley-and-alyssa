@@ -1,3 +1,4 @@
+//Credits to Dr. Stewart
 // with thanks to https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications#example_showing_files_size
 const uploadInput = document.getElementById("uploadInput");
 uploadInput.addEventListener(
@@ -140,16 +141,6 @@ function previewImage(preview, file) {
   };
   reader.readAsDataURL(file);
 
-  // copilot might have had it right?
-  // const reader = new FileReader();
-  // reader.onload = function (e) {
-  //   const img = new Image();
-  //   img.src = e.target.result;
-  //   // img.width = 100;
-  //   // img.height = 100;
-  //   document.getElementById("preview").appendChild(img);
-  // };
-  // reader.readAsDataURL(file);
 }
 
 

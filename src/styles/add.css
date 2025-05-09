@@ -69,3 +69,16 @@ body {
     text-decoration: none;
     color: black;
   }
+
+  @media (max-width: 886px) {
+
+    body {
+      display: inline;
+      grid-template-columns: auto;
+    }
+
+    #add-form-div {
+      height: 260px;
+    }
+
+  }

@@ -15,7 +15,7 @@ clothesForm.addEventListener('submit', function(e) {
     if (!validCategories.includes(itemCategory)) {
         alert('Please enter "Tops", "Bottoms", or "Shoes"');
         return;
-        // this does not work lol
+
       }
     let itemSubcategory = document.getElementById("inputSubcategory").value;
     let itemColor = document.getElementById("inputColor").value;
@@ -31,8 +31,8 @@ clothesForm.addEventListener('submit', function(e) {
         subcategory: itemSubcategory,
         color: itemColor,
         size: itemSize,
-        image: itemImage, // I dont think this is right bc it gets the actual image file and not the path lol
-        altText: "TODO", // IDK WHAT TO PUT FOR THIS YET LOL
+        image: itemImage, 
+        altText: "Image of Clothing", 
         wears: 0
     }
 

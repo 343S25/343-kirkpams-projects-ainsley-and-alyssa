@@ -270,7 +270,7 @@ function updateCurrentOutfitFromCarousel() {
         color: activeShoes.color,
         size: activeShoes.size,
         image: activeShoes.src,
-        altText: activeShoes.alt,// i actually messed up and need to change a lot of this to defaultshoes also do that to the above but my head hurts lol
+        altText: activeShoes.alt,
         wears: activeShoes.wears
     };
     document.getElementById("curr-shoes").src = activeShoes.src;
@@ -315,19 +315,19 @@ favsButton.addEventListener('click', function() {
     populateFavoritesHTML();
 });
 
-// Save button functionality (TODO MORE, RN JUST ADDS OBJECT TO AN ARRAY. IN FAVORITES.HTML WE SHOULD MAKE IT SO IT LOOPS THRU THE ARRAY
+
 let favOutfits = JSON.parse(localStorage.getItem("favOutfits") || "[]");
 
 const saveButton = document.getElementById("saveOutfitBtn");
 saveButton.addEventListener('click', function() {
-    let newFav = JSON.parse(JSON.stringify(currentlyWorn)); //will it not work bc they all have the same variable name? i havent tested this lol
-    favOutfits.push(newFav);   // we dont have enough stuff actually logged in the arrays w js to test it rn lol
+    let newFav = JSON.parse(JSON.stringify(currentlyWorn)); 
+    favOutfits.push(newFav);   
     localStorage.setItem("favOutfits", JSON.stringify(favOutfits));
     console.log("Saved outfit:", newFav);
 })
 console.log(favOutfits);
 
-// Put all of the outfits in the favOutfits array onscreen HAVE NOT TESTED YET LOL
+// Put all of the outfits in the favOutfits array onscreen
 function populateFavoritesHTML() {
     const container = document.getElementById("favoritesContainer");
     container.innerHTML = "";
@@ -355,7 +355,7 @@ function populateFavoritesHTML() {
 
 
 
-//IN PROGRESS
+
 const wearButton = document.getElementById('wear-btn');
 wearButton.addEventListener('click', function() {
     //get item from local storage
@@ -367,7 +367,7 @@ wearButton.addEventListener('click', function() {
         wornItems = JSON.parse(wornItems);
     }
 
-    //TODO: get item and add item currently on display to array
+
     let article = {
         top: {
             itemName: currentlyWorn.top.itemName,
