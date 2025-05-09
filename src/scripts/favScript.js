@@ -51,4 +51,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
         outfitsCarousel.appendChild(itemSlide);
     });
     localStorage.setItem("favOutfits", JSON.stringify(favOutfits));
+
+    let removeBtn = document.getElementById('remove-btn');
+    removeBtn.addEventListener('click', function() {
+        localStorage.removeItem("favOutfits");
+        location.reload();
+    });
   });

@@ -20,6 +20,28 @@ let defaultTop = {
     wears: 0
 }
 
+let blackTop = {
+    itemName: "Black Top",
+    category: "Shirts",
+    subcategory: "T-shirts",
+    color: "Black",
+    size: "Medium",
+    image: "images/shirts/black-shirt.png",
+    altText: "Second Top in Closet",
+    wears: 0
+}
+
+let orangeTop = {
+    itemName: "Orange Top",
+    category: "Shirts",
+    subcategory: "T-shirts",
+    color: "Orange",
+    size: "Medium",
+    image: "images/shirts/orange-shirt.png",
+    altText: "Third Top in Closet",
+    wears: 0
+}
+
 // Create default bottoms
 let defaultBottoms = {
     itemName: "Default Bottoms",
@@ -32,17 +54,62 @@ let defaultBottoms = {
     wears: 0
 }
 
+let jeanBottoms = {
+    itemName: "Jeans",
+    category: "Pants",
+    subcategory: "Jeans",
+    color: "Blue",
+    size: "Medium",
+    image: "images/pants/jeans.png",
+    altText: "Second Pants in Closet",
+    wears: 0
+}
+
+let joggerBottoms = {
+    itemName: "Joggers",
+    category: "Pants",
+    subcategory: "Joggers",
+    color: "Grey",
+    size: "Medium",
+    image: "images/pants/joggers.png",
+    altText: "Third Pants in Closet",
+    wears: 0
+}
+
 // Create default shoes
 let defaultShoes = {
     itemName: "Default Shoes",
     category: "Shoes",
     subcategory: "Sneakers",
     color: "Black",
-    size: "Medium",
+    size: "11",
     image: "images/shoes/default-shoes.png",
     altText: "First Shoes in Closet",
     wears: 0
 }
+
+let redShoes = {
+    itemName: "Red Shoes",
+    category: "Shoes",
+    subcategory: "Sneakers",
+    color: "Red",
+    size: "11",
+    image: "images/shoes/red-shoes.png",
+    altText: "Second Shoes in Closet",
+    wears: 0
+}
+
+let whiteShoes = {
+    itemName: "White Shoes",
+    category: "Shoes",
+    subcategory: "Sneakers",
+    color: "White",
+    size: "11",
+    image: "images/shoes/white-shoes.png",
+    altText: "Third Shoes in Closet",
+    wears: 0
+}
+
 
 let tops = [];
 let bottoms = [];
@@ -52,8 +119,14 @@ localStorage.setItem("tops", JSON.stringify(tops));
 localStorage.setItem("bottoms", JSON.stringify(bottoms));
 localStorage.setItem("shoes", JSON.stringify(shoes));
 tops.push(defaultTop);
+tops.push(orangeTop);
+tops.push(blackTop);
 bottoms.push(defaultBottoms);
-shoes.push(defaultShoes);
+bottoms.push(jeanBottoms);
+bottoms.push(joggerBottoms);
+shoes.push(whiteShoes);
+shoes.push(redShoes);
+shoes.push(whiteShoes);
 
 // Make item carousel slides
 let topsCarousel = document.getElementById("carousel-inner-1");
@@ -63,7 +136,7 @@ let shoesCarousel = document.getElementById("carousel-inner-3");
 function addTopSlide(item) {
     let itemSlide = document.createElement("div");
     itemSlide.classList.add("carousel-item");
-    if (item.itemName = "Default Top") itemSlide.classList.add("active");
+    if (item.itemName === "Default Top") itemSlide.classList.add("active");
     let itemImg = document.createElement("img");
     itemImg.classList.add("d-block", "w-100");
     itemImg.height = "100";
@@ -77,7 +150,7 @@ function addTopSlide(item) {
 function addBottomsSlide(item) {
     let itemSlide = document.createElement("div");
     itemSlide.classList.add("carousel-item");
-    if (item.itemName = "Default Bottoms") itemSlide.classList.add("active");
+    if (item.itemName === "Default Bottoms") itemSlide.classList.add("active");
     let itemImg = document.createElement("img");
     itemImg.classList.add("d-block", "w-100");
     itemImg.height = "100";
@@ -91,7 +164,7 @@ function addBottomsSlide(item) {
 function addShoesSlide(item) {
     let itemSlide = document.createElement("div");
     itemSlide.classList.add("carousel-item");
-    if (item.itemName = "Default Shoes") itemSlide.classList.add("active");
+    if (item.itemName === "Default Shoes") itemSlide.classList.add("active");
     let itemImg = document.createElement("img");
     itemImg.classList.add("d-block", "w-100");
     itemImg.height = "100";
@@ -104,8 +177,14 @@ function addShoesSlide(item) {
 
 // Make default item carousel slides
 addTopSlide(defaultTop);
+addTopSlide(blackTop);
+addTopSlide(orangeTop);
 addBottomsSlide(defaultBottoms);
+addBottomsSlide(joggerBottoms);
+addBottomsSlide(jeanBottoms);
 addShoesSlide(defaultShoes);
+addShoesSlide(redShoes);
+addShoesSlide(whiteShoes);
 
 // Make currently worn object
 let currentlyWorn = {

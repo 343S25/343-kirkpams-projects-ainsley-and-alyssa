@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         itemSlide.classList.add("carousel-item");
         if (index == 0) itemSlide.classList.add("active");
         let container = document.createElement("div");
-        container.classList.add("d-flex", "justify-content-around", "align-items-center");
+        container.classList.add("d-flex", "flex-column", "align-items-center", "gap-2");
 
         // top
         let topImg = document.createElement("img");
@@ -58,9 +58,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     // When wash button pressed
     let washButton = document.getElementById("wash-btn");
     washButton.addEventListener('click', function() {
-        // TODO: get current outfit, get the index of it, then splice it out.
-        // also dont forget to reset the worn back to 0
-        localStorage.setItem("worn", JSON.stringify(wornItems));
+        localStorage.removeItem("worn");
+        location.reload();
     });
 });
 
