@@ -26,18 +26,18 @@ let blackTop = {
     subcategory: "T-shirts",
     color: "Black",
     size: "Medium",
-    image: "images/shirts/black-shirt.png",
+    image: "images/shirts/Black-tshirt.png",
     altText: "Second Top in Closet",
     wears: 0
 }
 
 let orangeTop = {
-    itemName: "Orange Top",
+    itemName: "Yellow Top",
     category: "Shirts",
     subcategory: "T-shirts",
-    color: "Orange",
+    color: "Yellow",
     size: "Medium",
-    image: "images/shirts/orange-shirt.png",
+    image: "images/shirts/yellow-tshirt.png",
     altText: "Third Top in Closet",
     wears: 0
 }
@@ -55,23 +55,23 @@ let defaultBottoms = {
 }
 
 let jeanBottoms = {
-    itemName: "Jeans",
+    itemName: "Shorts",
     category: "Pants",
-    subcategory: "Jeans",
-    color: "Blue",
+    subcategory: "Shorts",
+    color: "Green",
     size: "Medium",
-    image: "images/pants/jeans.png",
+    image: "images/pants/shorts.png",
     altText: "Second Pants in Closet",
     wears: 0
 }
 
 let joggerBottoms = {
-    itemName: "Joggers",
+    itemName: "Jeans",
     category: "Pants",
-    subcategory: "Joggers",
-    color: "Grey",
+    subcategory: "Jeans",
+    color: "Blue",
     size: "Medium",
-    image: "images/pants/joggers.png",
+    image: "images/pants/jean-pants.png",
     altText: "Third Pants in Closet",
     wears: 0
 }
@@ -89,23 +89,23 @@ let defaultShoes = {
 }
 
 let redShoes = {
-    itemName: "Red Shoes",
+    itemName: "Athletic Shoes",
     category: "Shoes",
     subcategory: "Sneakers",
-    color: "Red",
+    color: "Grey",
     size: "11",
-    image: "images/shoes/red-shoes.png",
+    image: "images/shoes/sport.png",
     altText: "Second Shoes in Closet",
     wears: 0
 }
 
 let whiteShoes = {
-    itemName: "White Shoes",
+    itemName: "Dress Shoes",
     category: "Shoes",
-    subcategory: "Sneakers",
-    color: "White",
+    subcategory: "dress",
+    color: "tan",
     size: "11",
-    image: "images/shoes/white-shoes.png",
+    image: "images/shoes/dress.png",
     altText: "Third Shoes in Closet",
     wears: 0
 }
