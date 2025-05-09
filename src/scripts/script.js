@@ -430,3 +430,22 @@ wearButton.addEventListener('click', function () {
     wornItems.push(article);
     localStorage.setItem('worn', JSON.stringify(wornItems));
 })
+
+const exporting = document.getElementById('export-btn');
+exporting.addEventListener('click', function() {
+    let storedClothes = localStorage.getItem('favOutfits');
+    let parsedClothes = JSON.parse(storedClothes);
+    let stringyClothes = JSON.stringify(parsedClothes);
+
+    let encoded = encodeURIComponent(stringyClothes);
+
+    let urlThing = `data:application/json;charset=utf-8,${encoded}`;
+
+    let link = document.createElement('a');
+    link.href = urlThing;
+    link.download = 'favoriteOutfits';
+
+    document.getElementById('downloads').appendChild(link);
+
+    link.click();
+});
