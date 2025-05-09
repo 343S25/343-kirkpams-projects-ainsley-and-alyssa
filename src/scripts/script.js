@@ -1,7 +1,7 @@
 // Make carousel not move by itself
 $('.carousel').carousel({
     interval: false,
-  });
+});
 // Create objects for the closet (Tops, Bottoms, Shoes_
 // Create default top
 let defaultHead = {
@@ -128,6 +128,27 @@ shoes.push(whiteShoes);
 shoes.push(redShoes);
 shoes.push(whiteShoes);
 
+// read all my outfit images from opfs
+// const opfsRoot = await navigator.storage.getDirectory();
+//   const directoryHandle = await opfsRoot.getDirectoryHandle("opfs-gallery", {
+//     create: true,
+//   });
+//actually do this 3x one for each kind of clothing
+//   for await (let [name, handle] of directoryHandle) {
+    // const theOneFromOPFS = handle.name
+//     console.log(await handle.getFile()); // eg logs
+//   }
+//  for each image, you will start by getting its name property
+//  search in my 3 arrays for the object that has the fileNme that matches the current file's filename
+// tops.findIndex((piece) => {
+//     const pathToImage = piece.image.split("/")
+//     const filename = pathToImage[pathToImage.length - 1]
+//     return filename=== theOneFromOPFS
+// })
+
+// loop over each array (bootoms, shoes, etf)
+// 
+
 // Make item carousel slides
 let topsCarousel = document.getElementById("carousel-inner-1");
 let bottomsCarousel = document.getElementById("carousel-inner-2");
@@ -234,7 +255,7 @@ function updateCurrentOutfitFromCarousel() {
     // Top
     let activeTop = document.querySelector('#carousel-inner-1 .carousel-item.active img');
     currentlyWorn.top = {
-        itemName : activeTop.itemName,
+        itemName: activeTop.itemName,
         category: activeTop.category,
         subcategory: activeTop.subcategory,
         color: activeTop.color,
@@ -249,7 +270,7 @@ function updateCurrentOutfitFromCarousel() {
     // Bottoms
     let activeBottom = document.querySelector('#carousel-inner-2 .carousel-item.active img');
     currentlyWorn.bottoms = {
-        itemName : activeBottom.itemName,
+        itemName: activeBottom.itemName,
         category: activeBottom.category,
         subcategory: activeBottom.subcategory,
         color: activeBottom.color,
@@ -283,7 +304,7 @@ $('#carouselDiv6').on('slid.bs.carousel', updateCurrentOutfitFromCarousel);
 // Call to weather API
 const weatherButton = document.getElementById("weatherButton");
 let weatherP = document.getElementById("weatherP");
-weatherButton.addEventListener('click', async function() {
+weatherButton.addEventListener('click', async function () {
     console.log("click worked");
     let resp = await fetch("https://api.weatherapi.com/v1/forecast.json?key=2f4f1c7a2eec4e77891215249251604&q=22807&days=1");
     let myjson = await resp.json();
@@ -299,18 +320,18 @@ weatherButton.addEventListener('click', async function() {
 })
 
 const weatherDiv = document.getElementById("weatherDiv");
-weatherDiv.addEventListener('click', function() {
+weatherDiv.addEventListener('click', function () {
     weatherDiv.style.display = "none";
 })
 
 // Lower buttons functionality
 const laundryButton = document.getElementById('laundry-button');
-laundryButton.addEventListener('click', function() {
+laundryButton.addEventListener('click', function () {
     window.location.href = 'laundry.html';
 });
 
 const favsButton = document.getElementById('favorites-button');
-favsButton.addEventListener('click', function() {
+favsButton.addEventListener('click', function () {
     window.location.href = 'favorites.html';
     populateFavoritesHTML();
 });
@@ -319,9 +340,9 @@ favsButton.addEventListener('click', function() {
 let favOutfits = JSON.parse(localStorage.getItem("favOutfits") || "[]");
 
 const saveButton = document.getElementById("saveOutfitBtn");
-saveButton.addEventListener('click', function() {
-    let newFav = JSON.parse(JSON.stringify(currentlyWorn)); 
-    favOutfits.push(newFav);   
+saveButton.addEventListener('click', function () {
+    let newFav = JSON.parse(JSON.stringify(currentlyWorn));
+    favOutfits.push(newFav);
     localStorage.setItem("favOutfits", JSON.stringify(favOutfits));
     console.log("Saved outfit:", newFav);
 })
@@ -357,7 +378,7 @@ function populateFavoritesHTML() {
 
 
 const wearButton = document.getElementById('wear-btn');
-wearButton.addEventListener('click', function() {
+wearButton.addEventListener('click', function () {
     //get item from local storage
     let wornItems = localStorage.getItem('worn');
     //if theres no item create one
